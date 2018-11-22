@@ -38,12 +38,12 @@ class SampleViewModel  {
                                 selectType: UIImagePickerControllerSourceType.photoLibrary,
                                 style: .default)]
 
-            //if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 actions.insert(ActionSheetItem<UIImagePickerControllerSourceType>(
                                     title: "カメラを起動",
                                     selectType: UIImagePickerControllerSourceType.camera,
                                     style: .default), at: 0)
-            //}
+            }
             wireframe.shwoActionSheet(title: "画像設定", message: "選択してください。", actions: actions)
         })
         .disposed(by: self.disposeBag)
